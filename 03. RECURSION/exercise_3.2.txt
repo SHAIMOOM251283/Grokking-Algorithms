@@ -1,0 +1,25 @@
+When a recursive function runs forever, it keeps making recursive calls indefinitely 
+without ever reaching a base case that would terminate the recursion. 
+As a result, the call stack grows indefinitely, consuming more and more memory until the available memory is exhausted. 
+
+This situation is commonly known as "infinite recursion" or "infinite loop."
+
+Here's what happens to the stack when a recursive function runs forever:
+
+    Call Stack Growth: Each recursive call adds a new frame to the call stack. 
+    As the function continues to call itself recursively, more and more stack frames are added to the call stack, causing it to grow larger.
+
+    Memory Consumption: With each additional stack frame, more memory is allocated to the call stack. 
+    Since there is no termination condition to stop the recursion, this process continues indefinitely, consuming more and more memory.
+
+    Stack Overflow: Eventually, the call stack reaches its maximum size, determined by factors such as the available memory and system settings. 
+    When the call stack exceeds this maximum size, a stack overflow occurs. This results in a runtime error or exception, 
+    and the program typically terminates abruptly.
+
+    Program Crash: In some cases, the operating system may detect the stack overflow 
+    and terminate the program to prevent it from consuming excessive resources. 
+    This results in the program crashing or being forcibly terminated.
+
+In summary, when a recursive function runs forever, it leads to an infinite growth of the call stack, 
+consuming more memory until a stack overflow occurs or the program is terminated due to excessive resource usage. 
+It's essential to ensure that recursive functions have proper termination conditions to prevent infinite recursion and stack overflow errors.

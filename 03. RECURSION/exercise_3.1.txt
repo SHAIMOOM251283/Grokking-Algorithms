@@ -1,0 +1,6 @@
+    The greet("maggie") function is called first.
+    Inside greet("maggie"), it calls the greet2("maggie") function.
+    At this point, the execution of greet("maggie") is suspended, waiting for the greet2("maggie") function to complete.
+    The current function call is the greet2("maggie") function.
+    After greet2("maggie") completes, the program will return to where it left off in the greet("maggie") function, 
+    allowing it to resume execution.

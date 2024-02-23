@@ -1,0 +1,37 @@
+Tail-Recursive Function:
+
+def factorial(n, accumulator=1):
+    if n == 0:
+        return accumulator
+    else:
+        return factorial(n - 1, accumulator * n)
+
+Structure: This implementation uses a helper function factorial, which takes an additional parameter accumulator to 
+accumulate the factorial result. 
+The recursive call factorial(n - 1, accumulator * n) is in the tail position, and no additional computation is performed 
+after the recursive call.
+
+Efficiency: This function is tail-recursive, making it potentially more memory-efficient 
+and eligible for tail call optimization by compilers or interpreters.
+
+Non-Tail-Recursive Function:
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        result = n * factorial(n - 1)
+        return result
+
+Structure: This implementation directly calculates the factorial of n without using an accumulator. 
+The recursive call factorial(n - 1) is made, and then the result is multiplied by n to obtain the factorial of n.
+
+Efficiency: This function is not tail-recursive because the recursive call is followed by additional computation (multiplication by n) 
+before returning the result. 
+As a result, it may consume more memory and is less likely to be optimized for tail calls by compilers or interpreters.
+
+In summary, the tail-recursive function uses an accumulator to accumulate the factorial result 
+and ensures that the recursive call is in the tail position, 
+potentially leading to better memory efficiency and optimization by compilers. 
+On the other hand, the non-tail-recursive function directly calculates the factorial without using an accumulator, 
+which may result in less memory efficiency and optimization opportunities.

@@ -1,0 +1,81 @@
+def fact(x):
+    if x == 1:
+        return 1
+    else:
+        return x * fact(x-1)
+
+# Take user input for the number
+user_input = int(input("Enter a non-negative integer to calculate its factorial: "))
+
+# Check if the input is a non-negative integer
+if user_input < 1:
+    print("Please enter a non-negative integer.")
+else:
+    # Calculate and display the factorial
+    result = fact(user_input)
+    print(f"The factorial of {user_input} is:", result)
+
+
+fact(x-1): This is a recursive call to the fact() function with the argument x-1. 
+It means that the function is calling itself with a slightly smaller value of x.
+
+x * (x-1): This expression represents the product of x and x-1. It doesn't involve any recursive calls to a factorial function. 
+If we use this expression, it won't calculate the factorial correctly because it doesn't consider the product of all numbers from x down to 1, which is the definition of factorial.
+    For example:
+        For x = 5, x * (x-1) would be 5 * 4 = 20, which is not the factorial of 5 (5! = 120).
+    
+x * fact(x-1): This expression involves a recursive call to the fact() function with the argument x-1. 
+It implements the factorial calculation algorithm correctly by recursively multiplying x with the factorial of x-1, which in turn calculates the factorial of x-1 and so on until it reaches the base case.
+    For example:
+        For x = 5, x * fact(x-1) would be 5 * fact(4). 
+    Then, fact(4) would be calculated as 4 * fact(3), and so on until it reaches fact(1). 
+    This approach correctly calculates 5! = 5 * 4 * 3 * 2 * 1 = 120.
+
+In summary, x * (x-1) is a simple mathematical expression that doesn't implement the factorial calculation algorithm, 
+whereas x * fact(x-1) is the correct implementation of the factorial calculation algorithm using recursion.
+
+Break down of the call stacks for different values of x in the fact() function:
+
+When x is 1 (base case):
+    The function fact(1) is called.
+    Since x == 1, the base case is satisfied, and the function returns 1.
+    The call stack is resolved, and no further function calls are made.
+Call stack:
+fact(1) -> Returns 1
+
+When x is greater than 1 (recursive case):
+    The function fact(x) is called with x greater than 1.
+    The function enters the else branch since x is not equal to 1.
+    It calculates x * fact(x-1) by making a recursive call to fact(x-1).
+    This recursive call further breaks down the calculation of factorial.
+    The recursive calls continue until x reaches 1 (the base case).
+    Once the base case is reached, the recursive calls start resolving, 
+    and the intermediate results are multiplied to calculate the factorial of the original x.
+For example, let's consider x = 5:
+fact(5) -> 5 * fact(4)
+fact(4) -> 4 * fact(3)
+fact(3) -> 3 * fact(2)
+fact(2) -> 2 * fact(1)
+fact(1) -> Returns 1
+As the recursive calls resolve, the intermediate results are multiplied:
+fact(5) -> 5 * (4 * (3 * (2 * 1)))
+The final result is calculated to be 5! = 120.
+
+In summary, the call stack expands with each recursive call and resolves as the base case is reached. 
+The intermediate results are then multiplied to calculate the factorial of the original input x.
+
+The number of call stacks in the code depends on the value of x passed to the fact() function.
+
+If x is 1, there will be only one call stack, as the base case is immediately satisfied, and no further recursive calls are made.
+
+If x is greater than 1, there will be x call stacks (including the initial call stack), 
+as each recursive call to fact() creates a new call stack until the base case is reached.
+
+So, the number of call stacks varies based on the value of x. For example:
+
+    If x = 1, there is 1 call stack.
+    If x = 2, there are 2 call stacks.
+    If x = 3, there are 3 call stacks.
+    And so on, until x.
+
+In general, there will be x call stacks when x is greater than 1.
