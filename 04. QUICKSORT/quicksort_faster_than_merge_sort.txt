@@ -1,0 +1,57 @@
+1. Define function quicksort(arr):
+   a. Base case: if the length of the array is <= 1, return the array.  // O(1)
+   b. Choose a pivot element (typically the middle element).          // O(1)
+   c. Partition the array into three subarrays:                       // O(n)
+      - Left: containing elements less than the pivot.
+      - Middle: containing elements equal to the pivot.
+      - Right: containing elements greater than the pivot.
+   d. Recursively apply quicksort to the left and right subarrays.    // O(log n) on average
+   e. Concatenate the sorted left, middle, and right subarrays and return. // O(n)
+
+2. Define function merge_sort(arr):
+   a. Base case: if the length of the array is <= 1, return the array.  // O(1)
+   b. Split the array into two halves.                                // O(1)
+   c. Recursively apply merge_sort to the left and right halves.      // O(log n)
+   d. Merge the sorted left and right halves.                         // O(n)
+   e. Return the merged array.                                        // O(1)
+
+3. Define function merge(left, right):
+   a. Initialize an empty list result.                                // O(1)
+   b. Initialize two pointers left_idx and right_idx to 0.            // O(1)
+   c. Compare elements at left_idx and right_idx of left and right arrays respectively,
+      and append the smaller element to the result list.             // O(n)
+   d. Move the pointer of the array from which the element was appended.  // O(1)
+   e. Repeat steps c-d until all elements from both arrays are merged into the result.  // O(n)
+   f. Append any remaining elements from left and right arrays to the result.  // O(n)
+   g. Return the merged result.                                       // O(1)
+
+4. Generate a random list of integers 'arr' with 1000 elements.      // O(n)
+
+5. Measure the time taken by quicksort:
+   a. Record the current time.                                        // O(1)
+   b. Call quicksort(arr).                                             // O(n log n) on average
+   c. Record the time again.                                           // O(1)
+   d. Calculate the difference to find the execution time.             // O(1)
+
+6. Measure the time taken by merge sort:
+   a. Record the current time.                                        // O(1)
+   b. Call merge_sort(arr).                                            // O(n log n)
+   c. Record the time again.                                           // O(1)
+   d. Calculate the difference to find the execution time.             // O(1)
+
+7. Print the execution times of quicksort and merge sort.             // O(1)
+
+Explanation:
+
+    Big O Notation Application: The time complexities of quicksort and merge sort are analyzed in terms of the size of the input array. 
+    Quicksort has an average-case time complexity of O(n log n), while merge sort has a time complexity of O(n log n) in all cases. 
+    Both algorithms are applied recursively, with each step splitting the problem size in half.
+
+    Demonstration of Quicksort's Faster Performance:
+        Quicksort's average-case time complexity is typically faster than merge sort due to its smaller constant factor 
+        and better cache locality.
+        In practice, quicksort often exhibits better performance than merge sort for sorting random arrays, 
+        as demonstrated by measuring the execution times of both algorithms on a randomly generated array with 1000 elements.
+
+Overall, the execution time of the entire algorithm is influenced by the steps with the highest time complexity, 
+such as recursive calls to sort functions and merging steps, which determine the overall time complexity of the sorting algorithms.

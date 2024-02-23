@@ -1,0 +1,29 @@
+# REFER TO interactive_binary_search.py
+
+function binary_search(array, target):
+    left = 0
+    right = length of array - 1
+    
+    while left is less than or equal to right:
+        mid = left + (right - left) / 2
+        if array[mid] is equal to target:
+            return mid
+        else if array[mid] is less than target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    
+    return -1
+
+function main():
+    input array = prompt user to enter sorted array elements separated by spaces
+    input target = prompt user to enter the element to search for
+    
+    index = call binary_search(array, target)
+    if index is not equal to -1:
+        output "Element found at index " + index
+    else:
+        output "Element not found."
+
+if program is executed directly:
+    call main()

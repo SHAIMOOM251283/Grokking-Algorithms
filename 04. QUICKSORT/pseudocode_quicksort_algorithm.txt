@@ -1,0 +1,39 @@
+function quicksort(array):
+    // Base case: If the array has zero or one element, it is already sorted
+    if length of array < 2:
+        return array
+
+    // Select a pivot (in this case, the first element)
+    pivot = array[0]
+
+    // Partition the array into two sub-arrays: "less" and "greater"
+    less = []
+    greater = []
+    for each element x in array[1:]:
+        if x <= pivot:
+            append x to less
+        else:
+            append x to greater
+
+    // Recursively apply quicksort to the "less" and "greater" sub-arrays
+    sorted_less = quicksort(less)
+    sorted_greater = quicksort(greater)
+
+    // Combine the sorted sub-arrays and the pivot to form the sorted array
+    return concatenate sorted_less, pivot, sorted_greater
+
+def quicksort(array):
+    if len(array) < 2:
+        return array
+    else:
+        pivot = array[0]
+        less = [x for x in array[1:] if x <= pivot]
+        greater = [x for x in array[1:] if x > pivot]
+        return quicksort(less) + [pivot] + quicksort(greater)
+
+if len(array) < 2:
+    return array
+This condition checks whether the length of the array is less than 2. 
+If it is, it means the array has either zero or one element, and in both cases, it is considered sorted. 
+Therefore, the function simply returns the array as it is without performing any further sorting. 
+This is the base case that terminates the recursion.

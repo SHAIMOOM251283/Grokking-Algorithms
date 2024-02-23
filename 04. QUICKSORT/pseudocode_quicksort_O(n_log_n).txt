@@ -1,0 +1,17 @@
+quicksort(arr):
+    if length of arr <= 1:
+        return arr
+    choose a pivot randomly from arr
+    partition arr into three sub-arrays:
+        - elements less than the pivot
+        - elements equal to the pivot
+        - elements greater than the pivot
+    recursively sort the sub-arrays less_than_pivot and greater_than_pivot
+    concatenate the sorted sub-arrays and the equal_to_pivot array
+    return the concatenated array
+
+Explanation:
+- In the average case, the pivot choice is random, and it divides the array roughly in half.
+- Each partitioning step takes linear time O(n), where n is the size of the array.
+- We recursively sort two partitions, each containing roughly half of the elements.
+- Therefore, the time complexity can be expressed as T(n) = 2T(n/2) + O(n), resulting in O(n log n) time complexity.

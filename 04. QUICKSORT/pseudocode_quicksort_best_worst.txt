@@ -1,0 +1,115 @@
+Worst-case scenario (O(n) stack depth):
+
+In the worst-case scenario, the pivot chosen for partitioning always results in highly unbalanced partitions, 
+with one partition containing only one element less than the original array. 
+This happens when the pivot is consistently chosen as the smallest or largest element in the array.
+
+Pseudo-code for worst-case scenario:
+
+function quicksort_worst_case(arr, low, high):
+    if low < high:
+        pivot_index = partition_worst_case(arr, low, high)
+        quicksort_worst_case(arr, low, pivot_index - 1)
+        quicksort_worst_case(arr, pivot_index + 1, high)
+
+function partition_worst_case(arr, low, high):
+    pivot = arr[high]  // Choosing the last element as the pivot
+    i = low - 1
+    for j = low to high - 1:
+        if arr[j] <= pivot:
+            i += 1
+            swap arr[i] and arr[j]
+    swap arr[i + 1] and arr[high]
+    return i + 1
+
+Explanation:
+
+    In the worst-case scenario, the pivot chosen for partitioning is either the smallest or largest element in the array.
+    This results in highly unbalanced partitions, with one partition containing only one element less than the original array.
+    Consequently, each recursive call only reduces the size of the array by one element, leading to a recursive call stack depth of O(n).
+
+Best-case scenario (O(log n) stack depth):
+
+In the best-case scenario, the pivot consistently divides the array into two nearly equal parts, 
+resulting in a balanced partitioning at each step.
+
+Pseudo-code for best-case scenario:
+
+function quicksort_best_case(arr, low, high):
+    if low < high:
+        pivot_index = partition_best_case(arr, low, high)
+        quicksort_best_case(arr, low, pivot_index - 1)
+        quicksort_best_case(arr, pivot_index + 1, high)
+
+function partition_best_case(arr, low, high):
+    pivot_index = choose_pivot_index(arr, low, high)  // Choosing a pivot index
+    pivot = arr[pivot_index]
+    // Swapping the pivot with the last element to simplify partitioning
+    swap arr[pivot_index] and arr[high]
+    i = low - 1
+    for j = low to high - 1:
+        if arr[j] <= pivot:
+            i += 1
+            swap arr[i] and arr[j]
+    swap arr[i + 1] and arr[high]
+    return i + 1
+
+Explanation:
+
+    In the best-case scenario, the pivot consistently divides the array into two nearly equal parts.
+    This results in balanced partitioning at each step, where each partition contains roughly half of the elements of the original array.
+    Consequently, the depth of the recursive call stack is logarithmic with respect to the size of the array, 
+    leading to a stack depth of O(log n).
+
+Worst-case scenario (O(n) stack depth):
+
+function quicksort_worst_case(arr, low, high):
+    if low < high:                              // O(1)
+        pivot_index = partition_worst_case(arr, low, high)  // O(n)
+        quicksort_worst_case(arr, low, pivot_index - 1)     // T(n-1)
+        quicksort_worst_case(arr, pivot_index + 1, high)    // T(0)
+        
+function partition_worst_case(arr, low, high):
+    pivot = arr[high]                          // O(1)
+    i = low - 1                                // O(1)
+    for j = low to high - 1:                   // O(n)
+        if arr[j] <= pivot:                    // O(1)
+            i += 1                            // O(1)
+            swap arr[i] and arr[j]            // O(1)
+    swap arr[i + 1] and arr[high]              // O(1)
+    return i + 1                               // O(1)
+
+Explanation:
+
+    The partition_worst_case function has a time complexity of O(n) because it iterates through the entire range of the array.
+    As the pivot chosen for partitioning in the worst-case scenario leads to highly unbalanced partitions, 
+    each recursive call in quicksort_worst_case reduces the array size by only one element.
+    Therefore, the worst-case stack depth is O(n), 
+    as each recursive call may lead to another recursive call with a reduction in the array size by one.
+
+Best-case scenario (O(log n) stack depth):
+
+function quicksort_best_case(arr, low, high):
+    if low < high:                                   // O(1)
+        pivot_index = partition_best_case(arr, low, high)  // O(n)
+        quicksort_best_case(arr, low, pivot_index - 1)      // T(n/2)
+        quicksort_best_case(arr, pivot_index + 1, high)     // T(n/2)
+        
+function partition_best_case(arr, low, high):
+    pivot_index = choose_pivot_index(arr, low, high)  // O(1)
+    pivot = arr[pivot_index]                         // O(1)
+    swap arr[pivot_index] and arr[high]              // O(1)
+    i = low - 1                                      // O(1)
+    for j = low to high - 1:                         // O(n)
+        if arr[j] <= pivot:                          // O(1)
+            i += 1                                  // O(1)
+            swap arr[i] and arr[j]                  // O(1)
+    swap arr[i + 1] and arr[high]                    // O(1)
+    return i + 1                                     // O(1)
+
+Explanation:
+
+    The partition_best_case function still has a time complexity of O(n) because it iterates through the entire range of the array.
+    In the best-case scenario, the pivot consistently divides the array into two nearly equal parts, resulting in balanced partitioning.
+    Consequently, at each recursive step in quicksort_best_case, the array size is roughly halved, 
+    leading to a recursive call stack depth of O(log n).

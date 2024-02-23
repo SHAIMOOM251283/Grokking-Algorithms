@@ -1,0 +1,37 @@
+# Linear Search Pseudocode:
+function linear_search(arr, target):
+    # O(n) time complexity
+    for each element in arr:  # O(n) iterations
+        if element == target:
+            return index_of_element
+    return -1
+
+# Binary Search Pseudocode:
+function binary_search(arr, target):
+    # O(log n) time complexity
+    left = 0
+    right = length of arr - 1
+
+    while left <= right:  # At most O(log n) iterations
+        mid = (left + right) / 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    return -1
+
+# Explanation:
+# The Big O notation measures the efficiency of an algorithm based on its time or space complexity.
+# In linear search, the time complexity is O(n) because it iterates through each element of the list once.
+# In binary search, the time complexity is O(log n) because it repeatedly divides the search interval in half.
+# When comparing the two, the constant factor in O(n) becomes negligible as the size of the list (n) increases.
+# This is because O(log n) grows much slower than O(n) as n gets larger.
+# Even though binary search might have a higher constant factor due to additional calculations per iteration,
+# the logarithmic nature of its time complexity makes it significantly faster for large lists compared to linear search.
+
+Although binary search might have a higher constant factor due to additional calculations per iteration compared to linear search, 
+the logarithmic nature of its time complexity makes it significantly faster for large lists. 
+As a result, the constant factor almost never matters in practice, and binary search outperforms linear search for larger datasets.

@@ -1,0 +1,78 @@
+Printing the value of each element in an array:
+Time complexity: O(n), where n is the number of elements in the array. This is because you need to access and print each element once.
+This operation simply involves accessing each element of the array and printing it. 
+It's a linear operation because it takes time proportional to the size of the array.
+Big O notation: O(n) where n is the number of elements in the array.
+for each element in array:
+    print element
+
+Doubling the value of each element in an array:
+Time complexity: O(n), similar to printing each element, you need to access and update each element once.
+Similar to printing, this operation requires accessing each element of the array and performing a constant-time operation (doubling). 
+It's also linear.
+Big O notation: O(n) where n is the number of elements in the array.
+for each element in array:
+    element = element * 2
+
+Doubling the value of just the first element in an array:
+Time complexity: O(1), because you are only accessing and updating a single element, regardless of the size of the array.
+This operation involves accessing only the first element of the array and doubling its value. It doesn't depend on the size of the array.
+Big O notation: O(1) - constant time.
+array[0] = array[0] * 2
+
+Creating a multiplication table with all the elements in the array:
+Time complexity: O(n^2), where n is the number of elements in the array. 
+This is because for each element in the array, you are performing a multiplication operation with every other element. 
+So for an array of size n, you have to perform n * n multiplications.
+For each element in the array, you're performing a nested loop to multiply it with every other element in the array. 
+This results in a quadratic time complexity.
+Big O notation: O(n^2) where n is the number of elements in the array.
+for each element in array:
+    for each other_element in array:
+        multiply element by other_element
+
+
+Printing the value of each element in an array:
+def print_array(arr):
+    for element in arr:
+        print(element)
+
+# Example usage:
+arr = [1, 2, 3, 4, 5]
+print_array(arr)
+
+Doubling the value of each element in an array:
+def double_array_elements(arr):
+    for i in range(len(arr)):
+        arr[i] *= 2
+
+# Example usage:
+arr = [1, 2, 3, 4, 5]
+double_array_elements(arr)
+print(arr)
+
+Doubling the value of just the first element in an array:
+def double_first_element(arr):
+    if arr:
+        arr[0] *= 2
+
+# Example usage:
+arr = [1, 2, 3, 4, 5]
+double_first_element(arr)
+print(arr)
+
+Creating a multiplication table with all the elements in the array:
+def create_multiplication_table(arr):
+    table = []
+    for element in arr:
+        row = []
+        for other_element in arr:
+            row.append(element * other_element)
+        table.append(row)
+    return table
+
+# Example usage:
+arr = [2, 3, 7, 8, 10]
+multiplication_table = create_multiplication_table(arr)
+for row in multiplication_table:
+    print(row)

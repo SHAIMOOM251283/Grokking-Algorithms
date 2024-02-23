@@ -1,0 +1,16 @@
+quicksort_worst_case(arr):
+    if length of arr <= 1:
+        return arr
+    choose the first element of arr as the pivot
+    partition arr into two sub-arrays:
+        - elements less than or equal to the pivot
+        - elements greater than the pivot
+    recursively sort the sub-arrays less_than_pivot and greater_than_pivot
+    concatenate the sorted sub-arrays with the pivot in between
+    return the concatenated array
+
+Explanation:
+- In the worst-case scenario, the pivot selection strategy results in highly unbalanced partitions.
+- If the array is already sorted or nearly sorted, selecting the first element as the pivot results in one partition of size n-1 and another partition of size 0.
+- This leads to a recurrence relation T(n) = T(n-1) + O(n), as one partition reduces by 1 element in each step.
+- In the worst case, this leads to a quadratic time complexity, as each recursive call may potentially iterate over the entire array, resulting in O(n^2) time complexity.

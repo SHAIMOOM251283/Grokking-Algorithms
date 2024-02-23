@@ -1,0 +1,56 @@
+# SUM FUNCTION WITH RECURSION
+
+    The function starts with the list [1, 2, 3, 4].
+    It adds the first element (1) to the result of calling recursive_sum with the rest of the list ([2, 3, 4]).
+    Now, the function is called recursively with the list [2, 3, 4].
+    Again, it adds the first element (2) to the result of calling recursive_sum with the rest of the list ([3, 4]).
+    Then, it adds the first element (3) to the result of calling recursive_sum with the rest of the list ([4]).
+    Finally, when the function is called with the list containing only one element ([4]), it returns 4.
+    Now, the function returns the result of adding the first element (3) to the sum obtained in the previous step (4), which is 7.
+    The function returns the result of adding the first element (2) to the sum obtained in the previous step (7), which is 9.
+    The function returns the result of adding the first element (1) to the sum obtained in the previous step (9), which is 10.
+    The final result, which is the sum of all elements in the original list [1, 2, 3, 4], is 10.
+
+Step 1: The initial list is [1, 2, 3, 4].
+
+Step 2:
+
+    The function adds the first element (1) to the result of calling recursive_sum with the rest of the list ([2, 3, 4]).
+    This becomes 1 + ([2, 3, 4]).
+
+Step 3:
+
+    The function adds the first element (2) to the result of calling recursive_sum with the rest of the list ([3, 4]).
+    This becomes 2 + ([3, 4]).
+
+Step 4:
+
+    The function adds the first element (3) to the result of calling recursive_sum with the rest of the list ([4]).
+    This becomes 3 + ([4]).
+
+Step 5:
+
+    The function is called with the list containing only one element ([4]), and it returns 4.
+
+Now, let's summarize the calculation:
+
+Step 1: ([1, 2, 3, 4])
+Step 2: 1 + ([2, 3, 4]) = 1 + 9 = 10
+Step 3: 2 + ([3, 4]) = 2 + 7 = 9
+Step 4: 3 + ([4]) = 3 + 4 = 7
+Step 5: 4 + ([]) = 4
+
+So, the final result is 10, as expected. 
+
+The recursive_sum function takes a list of numbers as input.
+It checks if the list is empty. If it is, it returns 0 (base case).
+If the list is not empty, the function recursively calls itself with the rest of the list (i.e., without the first element).
+In each recursive call, the function adds the first element of the list to the sum obtained from the recursive call.
+This process continues until the base case is reached (an empty list).
+Once the base case is reached, the function starts returning values to its caller, 
+adding the first element of the list to the sum obtained from the recursive call.
+
+Step 1: The initial list is [1, 2, 3, 4].
+Step 2: The function adds the first element (1) to the result of calling recursive_sum with the rest of the list ([2, 3, 4]). This becomes 1 + 9 = 10.
+Steps 3, 4, and 5: The recursive calls continue until the base case is reached (an empty list). Once the base case is reached, the function returns a value to its caller, and this value is added to the previous result obtained from the recursive call.
+Finally, the final result (10) is returned to the original caller.

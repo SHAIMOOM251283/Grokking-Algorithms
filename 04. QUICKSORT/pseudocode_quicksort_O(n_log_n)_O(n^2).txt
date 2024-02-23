@@ -1,0 +1,78 @@
+quicksort(arr):
+    if length of arr <= 1:
+        return arr
+    pivot = arr[length of arr // 2]  # O(1)
+    left = [x for x in arr if x < pivot]  # O(n)
+    middle = [x for x in arr if x == pivot]  # O(n)
+    right = [x for x in arr if x > pivot]  # O(n)
+    return quicksort(left) + middle + quicksort(right)  # T(n) = 2T(n/2) + O(n)
+
+test_quicksort():
+    arr_best_case = list(range(10000))  # O(n)
+    sorted_arr_best_case = quicksort(arr_best_case)  # T(n) = 2T(n/2) + O(n)
+
+    arr_worst_case = list(range(10000, 0, -1))  # O(n)
+    sorted_arr_worst_case = quicksort(arr_worst_case)  # T(n) = 2T(n/2) + O(n)
+
+Explanation:
+
+    The quicksort function recursively sorts the input array arr by selecting a pivot element 
+    (ideally median to achieve optimal performance, but here it's selecting the middle element), 
+    partitioning the array into three parts (less than, equal to, and greater than the pivot), 
+    and recursively applying the quicksort algorithm to the left and right partitions. 
+    The time complexity of the quicksort algorithm is typically described by the Master Theorem, 
+    which gives the time complexity as O(n log n) in the average case and O(n^2) in the worst-case scenario. 
+    In this pseudo-code, we represent the average case time complexity as 
+    T(n) = 2T(n/2) + O(n) where T(n) is the time complexity for an array of size n, and O(n) represents the time taken to partition the array.
+
+    In the test_quicksort function, two scenarios are tested:
+        Best-case scenario: an already sorted array. In this case, the time complexity is still O(n log n), 
+        but it's the best-case scenario because the pivot selection results in balanced partitions, leading to optimal performance.
+        Worst-case scenario: a reversed sorted array. In this case, the pivot selection results in highly unbalanced partitions, 
+        leading to the worst-case time complexity of O(n^2).
+
+Overall, quicksort is a popular sorting algorithm known for its average-case efficiency of O(n log n), 
+making it suitable for large datasets. However, its worst-case time complexity of O(n^2) can be a concern 
+if not implemented carefully or if the input data is structured in a way that consistently triggers the worst-case behavior.
+
+
+Explanation:
+
+    The quicksort function recursively sorts the input array arr by selecting a pivot element, 
+    partitioning the array into three parts (less than, equal to, and greater than the pivot), 
+    and recursively applying the quicksort algorithm to the left and right partitions. 
+    Each recursive call divides the problem size by 2 (ideally), leading to a depth of the call stack of O(log n).
+
+    At each level of the call stack, the partitioning step takes O(n) time because it iterates over all elements of the array. 
+    Thus, each level of the call stack takes O(n) time.
+
+    Since there are O(log n) levels in the best-case scenario, the total time complexity is O(n) * O(log n) = O(n log n).
+
+    In the worst-case scenario, where the pivot selection leads to highly unbalanced partitions, 
+    each level of the call stack takes O(n) time as well. However, in the worst case, there are O(n) levels due to poorly chosen pivots, 
+    resulting in a total time complexity of O(n) * O(n) = O(n^2).
+
+This analysis demonstrates how the time complexity of quicksort is affected by the balance of the partitions, 
+with the best-case scenario achieving O(n log n) time complexity and the worst-case scenario resulting in O(n^2) time complexity.
+
+
+The statement that the best case is also the average case in quicksort refers to the scenario where the pivot selection is done randomly. 
+When a random element in the array is chosen as the pivot, quicksort tends to achieve optimal performance, resulting in an average-case time complexity of O(n log n).
+
+Let's explain why this is the case:
+
+    Random Pivot Selection: By choosing the pivot randomly from the array, 
+    we reduce the likelihood of consistently picking the worst possible pivot (like the smallest or largest element), 
+    which could lead to highly unbalanced partitions.
+
+    Balanced Partitions: With a random pivot selection, the probability of getting balanced partitions at each recursive step 
+    increases significantly. This means that, on average, the partition step will divide the array into roughly equal-sized subarrays.
+
+    Expected Number of Levels: With balanced partitions, the depth of the recursion tree tends to be logarithmic. 
+    Each level of the recursion tree takes O(n) time, but because the tree is balanced, the total time complexity is O(n log n).
+
+The provided pseudo-code can indeed be used to explain this concept. 
+When we analyze the average-case time complexity of quicksort, we consider the scenario where the pivot selection is random, 
+leading to balanced partitions and optimal performance. The pseudo-code emphasizes the partitioning step, which takes O(n) time per level, 
+and the recursive nature of the algorithm, which leads to a depth of O(log n) when the pivot selection is random. 
+This results in an average-case time complexity of O(n log n) when using random pivot selection.

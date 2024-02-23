@@ -1,0 +1,24 @@
+# print_items function
+
+print_items(list):
+    for each item in list:    // Iterate through each item in the list
+        print(item)           // Perform a constant-time operation: printing the item
+
+Time Complexity: O(n)
+
+Explanation: The code iterates through each item in the list exactly once and performs a constant-time operation (printing) for each item. 
+Therefore, the time complexity is linear, O(n), where n is the number of items in the list.
+
+# print_items2 function
+
+print_items2(list):
+    for each item in list:    // Iterate through each item in the list
+        sleep(1)              // Sleep for a constant duration of 1 second
+        print(item)           // Perform a constant-time operation: printing the item
+
+Time Complexity: O(n)
+
+Explanation: Although the code introduces a sleep operation, which pauses for 1 second for each item in the list, this does not affect the time complexity. 
+The time complexity remains linear, O(n), where n is the number of items in the list. 
+This is because the sleep operation is constant for each iteration and does not depend on the size of the input list. 
+Therefore, the overall time complexity is still O(n).

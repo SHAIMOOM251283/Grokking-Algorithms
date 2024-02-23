@@ -1,0 +1,63 @@
+# Importing necessary modules
+import time  # O(1)
+import random  # O(1)
+
+# Quicksort implementation
+def quicksort(arr):
+    if len(arr) <= 1:  # O(1)
+        return arr  # O(1)
+    pivot = arr[len(arr) // 2]  # Choosing the pivot (middle element) O(1)
+    left = [x for x in arr if x < pivot]  # O(n)
+    middle = [x for x in arr if x == pivot]  # O(n)
+    right = [x for x in arr if x > pivot]  # O(n)
+    return quicksort(left) + middle + quicksort(right)  # T(n) = 2T(n/2) + O(n), O(n log n) in average case
+
+# Merge Sort implementation
+def merge_sort(arr):
+    if len(arr) <= 1:  # O(1)
+        return arr  # O(1)
+    mid = len(arr) // 2  # O(1)
+    left_half = arr[:mid]  # O(n)
+    right_half = arr[mid:]  # O(n)
+    left_half = merge_sort(left_half)  # T(n/2)
+    right_half = merge_sort(right_half)  # T(n/2)
+    return merge(left_half, right_half)  # O(n), O(n log n)
+
+def merge(left, right):
+    result = []  # O(1)
+    left_index, right_index = 0, 0  # O(1)
+    while left_index < len(left) and right_index < len(right):  # O(n)
+        if left[left_index] < right[right_index]:  # O(1)
+            result.append(left[left_index])  # O(1)
+            left_index += 1  # O(1)
+        else:
+            result.append(right[right_index])  # O(1)
+            right_index += 1  # O(1)
+    result.extend(left[left_index:])  # O(n)
+    result.extend(right[right_index:])  # O(n)
+    return result  # O(n)
+
+# Test the sorting algorithms
+arr = random.sample(range(1, 100000), 10000)  # Generating a random array of size 10000, O(n)
+
+# Timing Quicksort
+start_time = time.time()  # O(1)
+sorted_arr_quick = quicksort(arr)  # O(n log n) average case
+end_time = time.time()  # O(1)
+print("Quicksort time:", end_time - start_time, "seconds")  # Time taken by Quicksort, O(1)
+
+# Timing Merge Sort
+start_time = time.time()  # O(1)
+sorted_arr_merge = merge_sort(arr)  # O(n log n)
+end_time = time.time()  # O(1)
+print("Merge Sort time:", end_time - start_time, "seconds")  # Time taken by Merge Sort, O(1)
+
+In this explanation:
+
+    The quicksort function implements the Quicksort algorithm. 
+    The average case time complexity of Quicksort is O(n log n), but it can degrade to O(n^2) in the worst-case scenario.
+    The merge_sort function implements the Merge Sort algorithm, which guarantees O(n log n) time complexity in all cases.
+    The merge function is a helper function used in Merge Sort to merge two sorted arrays.
+    The timing of each sorting algorithm is performed and printed to compare their performance.
+    Overall, the script demonstrates the difference in performance between Quicksort 
+    and Merge Sort for sorting a random array of 10,000 elements.

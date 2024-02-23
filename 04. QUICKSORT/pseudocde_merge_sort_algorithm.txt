@@ -1,0 +1,74 @@
+function merge_sort(arr):
+    if length of arr <= 1:
+        return arr
+
+    mid = length of arr // 2
+    left_half = first half of arr
+    right_half = second half of arr
+
+    left_half = merge_sort(left_half)
+    right_half = merge_sort(right_half)
+
+    return merge(left_half, right_half)
+
+function merge(left, right):
+    result = empty list
+    left_idx = 0
+    right_idx = 0
+
+    while left_idx < length of left and right_idx < length of right:
+        if left[left_idx] < right[right_idx]:
+            append left[left_idx] to result
+            increment left_idx
+        else:
+            append right[right_idx] to result
+            increment right_idx
+
+    append remaining elements from left and right to result
+
+    return result
+
+# Example usage:
+arr = [3, 7, 2, 9, 5, 1, 8, 6]
+sorted_arr = merge_sort(arr)
+print("Sorted array:", sorted_arr)
+
+
+The merge sort algorithm exhibits a time complexity of O(n log n). The following explains how this time complexity is achieved:
+
+    Divide (Splitting the Array):
+        In the merge_sort function, the array is continuously divided into halves until each sub-array contains only one element. 
+        This process of dividing the array takes O(log n) time, where n is the size of the original array.
+
+    Merge (Combining the Halves):
+        After the array is divided into single-element sub-arrays, they are merged back together in a sorted manner in the merge function.
+        The merging process involves comparing and combining elements from the two sorted halves. 
+        Since each element in both halves is compared at most once during the merge process, 
+        the time complexity of merging is linear with respect to the total number of elements in the original array, which is O(n).
+
+    Overall Time Complexity:
+        Since the division step takes O(log n) time and the merging step takes O(n) time, 
+        the overall time complexity of the merge sort algorithm is O(n log n).
+        This is because at each level of recursion, the array is divided into two halves, and there are log n levels of recursion. 
+        At each level, the total number of comparisons made during merging is O(n), resulting in a total time complexity of O(n log n).
+
+The pseudo-code illustrates the merge sort algorithm's efficient time complexity of O(n log n) by efficiently dividing and merging the array.
+
+
+The merge sort algorithm is implemented recursively, and the time complexity of the merge sort algorithm is indeed O(n log n), 
+where 'n' is the number of elements in the array. The following analyses how this time complexity arises in the code:
+
+    Splitting the Array: In the merge_sort function, the array is divided into two halves repeatedly 
+    until each subarray contains only one element. 
+    This splitting operation has a time complexity of O(log n), as the array is divided into halves recursively.
+
+    Merging the Arrays: In the merge function, the merging step combines two sorted subarrays into a single sorted array. 
+    The time complexity of this operation is O(n), where 'n' is the total number of elements in both subarrays. 
+    Since each element is compared only once during merging, and each element is placed into the merged array exactly once, 
+    the overall time complexity of merging is linear with respect to the number of elements being merged.
+
+    Combining Both Operations: As the splitting operation recurses O(log n) times and the merging operation takes O(n) time, 
+    the total time complexity of the merge sort algorithm is the product of these two complexities, which is O(n log n).
+
+Therefore, the use of O(n log n) time complexity in the code is implicit in the way the array is divided 
+and merged during the execution of the merge sort algorithm.
