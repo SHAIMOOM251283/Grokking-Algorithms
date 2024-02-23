@@ -1,0 +1,41 @@
+Phonebook with names and phone numbers:
+
+    Hash function (a) returns "1" for all inputs, meaning all names would be hashed to the same index, resulting in a poor distribution.
+    Hash function (b) uses the length of the string as the index. Since the names have different lengths, 
+    it would provide a decent distribution.
+    Hash function (c) uses the first character of the string as the index. Since the names start with different letters, 
+    it would provide a decent distribution.
+    Hash function (d) maps letters to primes and sums them up modulo the size of the hash. 
+    This would likely provide a good distribution since it takes into account the entire string.
+
+Conclusion: Hash functions (b), (c), and (d) would provide good distributions for the phonebook.
+
+Mapping from battery size to power:
+
+    Hash function (a) would hash all battery sizes to the same index, leading to a poor distribution.
+    Hash function (b) uses the length of the string as the index. Since battery sizes have different lengths, 
+    it would provide a decent distribution.
+    Hash function (c) uses the first character of the string as the index. 
+    This would not provide a good distribution as all battery sizes start with the letter "A".
+    Hash function (d) maps letters to primes and sums them up modulo the size of the hash. 
+    This would likely provide a good distribution since it takes into account the entire string.
+
+Conclusion: Hash functions (b) and (d) would provide good distributions for the battery sizes.
+
+Mapping from book titles to authors:
+
+    Hash function (a) would hash all titles to the same index, leading to a poor distribution.
+    Hash function (b) uses the length of the string as the index. Since book titles have different lengths, 
+    it would provide a decent distribution.
+    Hash function (c) uses the first character of the string as the index. 
+    This may provide a decent distribution depending on the starting letters of the book titles.
+    Hash function (d) maps letters to primes and sums them up modulo the size of the hash. 
+    This would likely provide a good distribution since it takes into account the entire string.
+
+Conclusion: Hash functions (b), (c), and (d) would provide good distributions for the book titles.
+
+In summary, for each example:
+
+    Phonebook: Hash functions (b), (c), and (d) are suitable.
+    Battery size to power: Hash functions (b) and (d) are suitable.
+    Book titles to authors: Hash functions (b), (c), and (d) are suitable.
