@@ -1,0 +1,41 @@
+import heapq
+
+def dijkstra(graph, start, end):
+    # Initialize distances with infinity for all nodes except start node
+    distances = {node: float('inf') for node in graph}
+    distances[start] = 0
+    
+    # Priority queue to store nodes to visit
+    pq = [(0, start)]  # (distance, node)
+    
+    while pq:
+        current_distance, current_node = heapq.heappop(pq)
+        
+        # Check if the current node's distance is already smaller than calculated
+        if current_distance > distances[current_node]:
+            continue
+        
+        # Iterate through neighbors of current node
+        for neighbor, weight in graph[current_node].items():
+            distance = current_distance + weight
+            # If the new distance is smaller, update distance and push into priority queue
+            if distance < distances[neighbor]:
+                distances[neighbor] = distance
+                heapq.heappush(pq, (distance, neighbor))
+    
+    # Return the shortest distance to the end node
+    return distances[end]
+
+# Define the graph
+graph = {
+    'Start': {'A': 5, 'C': 2},
+    'A': {'B': 4, 'D': 2},
+    'B': {'Finish': 3},
+    'C': {'A': 8, 'D': 7},
+    'D': {'Finish': 1},
+    'Finish': {}
+}
+
+# Calculate the shortest path from 'Start' to 'Finish'
+shortest_distance = dijkstra(graph, 'Start', 'Finish')
+print("Shortest distance from Start to Finish:", shortest_distance)
