@@ -1,0 +1,18 @@
+The dynamic programming approach is typically used for solving optimization problems where the problem can be broken down into overlapping subproblems, 
+and the solutions to the subproblems can be combined to solve the overall problem. 
+However, in the case of the thief problem described here, using dynamic programming directly may not be the most efficient approach.
+
+Dynamic programming is well-suited for problems where the optimal solution can be derived from optimal solutions to subproblems. 
+In the thief problem, the decision of which items to take or not take is based on the remaining capacity of the knapsack 
+and the value-to-weight ratios of the items. While dynamic programming could be adapted to solve this problem, 
+it may not be the most straightforward or efficient approach because the problem doesn't exhibit optimal substructure.
+
+The greedy algorithm, as implemented in the code you provided, works well for this specific problem 
+because it makes locally optimal choices at each step without needing to consider all possible combinations of items. 
+It iteratively selects the most valuable item (based on value-to-weight ratio) until the knapsack is full.
+
+That said, if the problem constraints were to change significantly or if there were additional considerations such as item limits, 
+ programming might be a more appropriate solution. 
+ For example, if the thief had to consider limits on the number of items they could take 
+ or if the items had different types of value dependencies that could create overlapping subproblems, 
+ dynamic programming might be more applicable.

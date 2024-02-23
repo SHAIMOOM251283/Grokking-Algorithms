@@ -1,0 +1,17 @@
+The issue here lies in the nature of dynamic programming and its assumption of "optimal substructure."
+
+Dynamic programming works effectively when the problem can be broken down into overlapping subproblems, 
+and the solution to each subproblem depends only on the solutions of its smaller subproblems. 
+In other words, the optimal solution to the entire problem can be constructed from the optimal solutions to its subproblems.
+
+However, in this scenario, the time required for each attraction in Paris is not independent of each other due to the travel time 
+between London and Paris. When you select an attraction in Paris (let's say the Eiffel Tower), 
+it affects the time available for visiting other attractions (such as the Louvre and Notre Dame) due to the reduced travel time needed 
+for subsequent attractions.
+
+This interdependence among subproblems violates the assumption of independent subproblems required for dynamic programming. 
+As a result, the dynamic programming approach cannot accurately model this scenario.
+
+In situations like this where the subproblems are not independent, 
+other techniques such as greedy algorithms or backtracking may be more appropriate for finding an optimal solution. 
+These techniques allow for considering the dependencies between subproblems and adjusting the solution accordingly.

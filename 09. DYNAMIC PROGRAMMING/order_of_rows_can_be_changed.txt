@@ -1,0 +1,14 @@
+In dynamic programming, particularly when solving problems using techniques like memoization or tabulation, 
+the order of rows can indeed be changed without affecting the correctness of the solution. 
+This is because dynamic programming relies on solving subproblems and storing their solutions in a table, 
+which can be filled in any order as long as the dependencies between subproblems are properly handled.
+
+For example, consider the typical dynamic programming approach to solving the 0/1 Knapsack problem using tabulation. 
+The solution involves filling in a table where each cell represents the maximum value that can be achieved with a certain number of items 
+and a certain weight capacity of the knapsack. The order in which you iterate over the rows (representing the number of items) 
+doesn't affect the final solution as long as you correctly compute the values for each cell based on previously computed values.
+
+Similarly, in other dynamic programming problems, the order of rows can be changed without affecting the correctness of the solution, 
+as long as the dependencies between subproblems are properly managed. 
+This flexibility in the order of computation is one of the advantages of dynamic programming, 
+as it allows for optimization and efficiency improvements in algorithm implementations.

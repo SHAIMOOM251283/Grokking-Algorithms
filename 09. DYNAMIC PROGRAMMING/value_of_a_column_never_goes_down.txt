@@ -1,0 +1,19 @@
+In the context of dynamic programming for the knapsack problem, 
+the value of a column (or cell) in the dynamic programming table will never go down as the algorithm progresses. 
+This is because the goal of dynamic programming is to find the optimal solution by considering all possible subproblems 
+and storing their solutions in a table.
+
+The key idea behind dynamic programming is that once we compute the value of a subproblem, 
+we store it in a table so that we can reuse it when solving other subproblems. 
+The value computed for a particular subproblem represents the best solution found so far considering the items processed up to that point.
+
+In the knapsack problem specifically, the value of each cell in the dynamic programming table 
+represents the maximum value that can be achieved with a certain number of items 
+and a certain weight capacity of the knapsack. 
+As the algorithm progresses, it iteratively computes the optimal value for each subproblem by considering whether to include the current item 
+or not.
+
+Since dynamic programming systematically explores all possible combinations of items and weight capacities, 
+and since it only updates a cell in the table if a better solution is found, 
+the value of a column (or cell) will never decrease as the algorithm progresses. 
+Instead, it either stays the same or increases as better solutions are discovered.
