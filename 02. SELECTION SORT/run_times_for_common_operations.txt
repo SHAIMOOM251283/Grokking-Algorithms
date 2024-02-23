@@ -1,0 +1,54 @@
+Array:
+
+    Reading (Access) from an Array (O(1)):
+        Arrays have contiguous memory locations, and elements are stored at fixed indices.
+        Accessing an element involves directly computing its memory address using its index.
+        As a result, accessing an element in an array has constant time complexity O(1).
+
+    Insertion into an Array (O(n)):
+        Inserting an element in the middle or at the beginning of an array involves shifting subsequent elements to make space.
+        In the worst case, you may need to shift all elements to accommodate the new one.
+        This operation has a time complexity of O(n), where n is the number of elements in the array.
+    
+    Deletion in an Array (O(n)):
+        Deleting an element from an array involves shifting all the elements to the right of the deleted element one position to the left.
+        In the worst case, you may need to shift all elements, resulting in a time complexity of O(n), 
+        where n is the number of elements in the array.
+        
+        Contiguous Memory:
+        Arrays use contiguous memory, and maintaining this contiguous nature requires shifting elements 
+        when an element is removed from the middle.
+
+List (Linked List):
+
+    Reading (Access) from a Linked List (O(n)):
+        Unlike arrays, linked lists do not have contiguous memory locations.
+        To access an element, you need to traverse the list from the beginning until you reach the desired node.
+        Accessing an element in a linked list has a time complexity of O(n), where n is the number of elements in the list.
+
+    Insertion into a Linked List (O(1)):
+        Inserting an element in a linked list involves updating pointers to insert a new node.
+        If you have a reference to the node before the insertion point, the operation can be done in constant time (O(1)).
+        This is a key advantage of linked lists over arrays for insertions at arbitrary positions.
+    
+    Deletion in a Linked List (O(1)):
+        Deleting an element from a linked list involves updating pointers to bypass the node to be deleted.
+        If you have a reference to the node before the deletion point, you can update the pointers in constant time (O(1)).
+        This is a key advantage of linked lists over arrays for deletion operations.
+        
+        No Shifting Overhead:
+        Linked lists do not have the shifting overhead associated with contiguous memory, making deletion in the middle efficient.
+
+    
+    Reading from an array is O(1) due to direct access by index.
+
+    Inserting into an array is O(n) in the worst case due to the need for shifting elements.
+    
+    Reading from a linked list is O(n) because you may need to traverse the list.
+    
+    Inserting into a linked list is O(1) if you have a reference to the insertion point, as it involves updating pointers.
+    
+    Deleting an element from an array has a time complexity of O(n) due to the need to shift elements.
+    
+    Deleting an element from a linked list has a time complexity of O(1) if you have a reference to the node before the deletion point, 
+    as it involves updating pointers without shifting elements.

@@ -1,0 +1,33 @@
+For the scenario described, where servers add orders to the back of the queue, and chefs take orders off the front of the queue, 
+a linked list is a more suitable choice. Here's why:
+Linked List:
+
+    Efficient Insertion and Deletion at Both Ends:
+        Linked lists allow for efficient insertion and deletion at both the beginning and end of the list.
+        Servers can add orders to the back of the queue by inserting at the end of the linked list (O(1) time complexity).
+        Chefs can take orders off the front of the queue by removing the first element (O(1) time complexity).
+
+    No Need for Shifting Elements:
+        Inserting and deleting elements in a linked list does not require shifting other elements, making these operations efficient.
+
+    Dynamic Size:
+        Linked lists can easily grow or shrink in size based on the number of orders without the need for a fixed-size allocation.
+
+In a scenario where the order queue is constantly changing and orders are frequently added to the back and removed from the front, 
+a linked list provides efficient operations for both of these actions.
+
+Array:
+
+    Inefficient Deletion at the Beginning:
+        While arrays support constant-time insertion at the end (appending), deletion at the beginning involves shifting all other elements, 
+        resulting in a time complexity of O(n), where n is the number of elements in the array.
+
+    Fixed Size:
+        Arrays are usually pre-allocated with a fixed size, and resizing involves creating a new array and copying elements, 
+        which can be inefficient.
+
+    Suboptimal for Frequent Insertions and Deletions:
+        Arrays are suboptimal for scenarios where frequent insertions and deletions are needed at both ends of the data structure.
+
+In summary, for an order queue where servers add orders to the back and chefs take orders off the front, 
+a linked list provides more efficient and convenient operations compared to an array.

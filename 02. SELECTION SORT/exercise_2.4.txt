@@ -1,0 +1,31 @@
+Using an array to store the list of users has certain downsides, especially when considering inserts, 
+and particularly when you are using binary search for logins. Here are the key downsides:
+Array:
+
+    Fixed Size:
+        Arrays are usually pre-allocated with a fixed size. When the array is full, and a new user signs up, 
+        you may need to resize the array to accommodate the new user.
+
+    Resizing Overhead:
+        Resizing an array involves creating a new, larger array and copying all existing elements to the new array. 
+        This operation has a time complexity of O(n), where n is the number of elements in the array.
+        The resizing process can be inefficient, especially if it happens frequently as users sign up.
+
+    Inefficient Inserts:
+        If the new user needs to be inserted in a sorted order (to maintain the order required for binary search), 
+        inserting the user into the array involves shifting other elements, which takes O(n) time.
+
+    Impact on Binary Search:
+        The efficiency of binary search relies on a sorted array. 
+        Frequent insertions and the subsequent shifting of elements can disrupt the sorted order, impacting the performance of binary search.
+
+    Dynamic Memory Allocation:
+        If the array is large but the number of users is relatively small, 
+        a significant amount of memory may be allocated but remain unused, leading to inefficiencies in memory usage.
+
+In summary, while arrays are efficient for random access and binary search, they have downsides for frequent inserts, 
+especially in scenarios where maintaining a sorted order is essential. 
+The need for resizing, shifting elements, and the impact on the efficiency of binary search 
+makes arrays suboptimal for scenarios where new users sign up often. 
+In such cases, data structures like linked lists or dynamic arrays (such as Python lists or ArrayLists in other languages) 
+may be considered for more efficient insertions.

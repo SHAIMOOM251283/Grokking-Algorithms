@@ -1,0 +1,34 @@
+For the described scenario where you have lots of inserts (adding daily expenses) and a few reads (reviewing expenses at the end of the month), 
+using a linked list could be a more suitable choice. Here's why:
+
+Linked List:
+
+    Insertion (O(1)):
+        Inserting an expense into a linked list, especially at the beginning or middle, can be done in constant time (O(1)).
+        You can easily insert a new expense node by updating pointers without the need to shift elements, 
+        which is a significant advantage for frequent insertions.
+
+    Space Efficiency:
+        Linked lists allow dynamic memory allocation, meaning you can allocate memory for each expense as needed without 
+        the need for a fixed-size array.
+        This dynamic allocation can be more memory-efficient than pre-allocating a large array.
+
+    Flexibility in Size:
+        Linked lists can easily grow or shrink in size as needed, accommodating a variable number of expenses without wasting memory.
+
+Array:
+
+    Insertion (O(n)):
+        Inserting an expense into an array may require shifting elements, 
+        especially if you want to maintain a sorted order or insert in the middle.
+        In the worst case, this operation takes O(n) time, where n is the number of expenses, making it less efficient for frequent insertions.
+
+    Space Efficiency:
+        Arrays usually require pre-allocation with a fixed size, 
+        potentially leading to wasted memory if the array size is significantly larger than the number of expenses.
+
+    Fixed Size:
+        If the array is fixed-size and you exceed its capacity, you would need to implement resizing logic, which adds complexity.
+
+In summary, considering the high frequency of inserts and the dynamic nature of expense tracking, 
+a linked list is generally more suitable due to its efficient O(1) insertion and dynamic memory allocation.
