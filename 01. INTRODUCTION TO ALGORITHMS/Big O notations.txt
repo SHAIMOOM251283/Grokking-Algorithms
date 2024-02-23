@@ -1,0 +1,17 @@
+    You have a name, and you want to find the person’s phone number in the phone book.
+        Suitable Big O: O(log n) - Logarithmic Time Complexity
+        Explanation: If the phone book is sorted by name, you could use a binary search to efficiently find the person's phone number.
+
+    You have a phone number, and you want to find the person’s name in the phone book.
+        Suitable Big O: O(n) - Linear Time Complexity
+        Explanation: In this case, you might need to scan through the phone book sequentially until you find the matching phone number.
+
+    You want to read the numbers of every person in the phone book.
+        Suitable Big O: O(n) - Linear Time Complexity
+        Explanation: Reading the numbers of every person would require iterating through the entire phone book.
+
+    You want to read the numbers of just the As.
+        Suitable Big O: O(k) - Where 'k' is the number of entries that start with 'A'.
+        Explanation: If the phone book is organized in a way that allows you to efficiently access entries starting with 'A' 
+        (like a sorted list or a hash table with appropriate hashing), 
+        the time complexity would depend on the number of entries with names starting with 'A'.

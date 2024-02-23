@@ -1,0 +1,48 @@
+The Traveling Salesperson Problem is a classic problem in computer science and optimization. It can be described as follows:
+
+Problem Statement:
+Given a list of cities and the distances between each pair of cities, the task is to find the shortest possible route that visits each city exactly once and returns to the original city. 
+The objective is to minimize the total distance traveled.
+
+Formally:
+Let nn be the number of cities, dijdij​ be the distance between city ii and city jj, and PP be the set of all possible routes. 
+The goal is to find a permutation ππ of the cities such that the sum of distances dπ(i)π(i+1)dπ(i)π(i+1)​ is minimized, where π(n+1)=π(1)π(n+1)=π(1).
+
+The Traveling Salesperson Problem is known to be NP-hard, which means that as the number of cities increases, the problem becomes computationally intractable for exact solutions. 
+There are various algorithms and heuristics to approximate solutions, such as brute-force approaches, dynamic programming, and approximation algorithms like the nearest neighbor algorithm or the Christofides algorithm.
+
+A permutation is an arrangement of elements in a specific order. 
+In mathematics, a permutation of a set is an ordered arrangement of its elements. 
+For example, if you have a set of three elements {A, B, C}, there are six permutations:
+
+    ABC
+    ACB
+    BAC
+    BCA
+    CAB
+    CBA
+
+In a permutation, each element of the set appears exactly once, and the order in which the elements appear is significant. 
+The number of permutations of a set with nn distinct elements is n!n! (read as "n factorial").
+
+The factorial (n!n!) of a non-negative integer nn is the product of all positive integers less than or equal to nn. 
+Mathematically, it is expressed as:
+n!=n×(n−1)×(n−2)×…×3×2×1n!=n×(n−1)×(n−2)×…×3×2×1
+
+For example:
+5!=5×4×3×2×1=1205!=5×4×3×2×1=120
+
+Permutations are often used in combinatorics, probability, and various areas of mathematics and computer science. 
+In the context of the Traveling Salesperson Problem, a permutation of cities represents a specific order in which the cities are visited.
+
+In terms of time complexity, O(n!)O(n!) is technically suitable for solving the Traveling Salesman Problem (TSP) because it represents the exhaustive search approach, where all possible permutations of cities are considered to find the optimal solution.
+
+However, O(n!)O(n!) is highly inefficient and impractical for large instances of the TSP. 
+The factorial growth makes the algorithm infeasible as the number of cities increases. 
+The number of permutations grows factorially with the number of cities, making the algorithm computationally expensive and often intractable for larger instances.
+
+For small instances of the TSP, an exhaustive search may be feasible. 
+However, as the number of cities increases, more efficient algorithms and heuristics, such as dynamic programming, approximation algorithms (e.g., nearest neighbor algorithm), or metaheuristic approaches (e.g., genetic algorithms, simulated annealing), are often employed to find near-optimal solutions in a reasonable amount of time.
+
+In summary, while O(n!)O(n!) is suitable in a theoretical sense, it is rarely practically used for solving the TSP for anything beyond a small number of cities due to its exponential time complexity. 
+More efficient algorithms are preferred for real-world applications.
