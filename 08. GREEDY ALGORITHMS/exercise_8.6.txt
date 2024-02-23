@@ -1,0 +1,10 @@
+Yes, the problem of finding the shortest route that visits all 20 homes is a variant of the well-known Traveling Salesman Problem (TSP), 
+which is NP-complete. In the general TSP, a salesman needs to find the shortest route that visits a given set of cities exactly once 
+and returns to the starting city.
+
+In your case, instead of cities, you have homes, but the essence of the problem remains the same: 
+finding the shortest route that visits each home exactly once and returns to the starting point. Since the TSP is NP-complete, 
+your problem inherits that complexity. 
+Therefore, finding the optimal solution for this problem can be computationally challenging, especially as the number of homes increases.
+
+REFER TO: nearest_neighbor_heuristic.py

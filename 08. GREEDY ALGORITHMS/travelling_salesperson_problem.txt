@@ -1,0 +1,23 @@
+Dijkstra's algorithm and the Bellman-Ford algorithm are both algorithms designed for finding the shortest paths in weighted graphs. 
+However, they are not directly applicable to solving the traveling salesperson problem (TSP) in its classic form.
+
+Here's why:
+
+    Dijkstra's Algorithm: Dijkstra's algorithm is used to find the shortest path from a single source vertex to all other vertices 
+    in a weighted graph with non-negative edge weights. It does not consider the requirement of visiting all vertices exactly once, 
+    which is a fundamental constraint in the TSP.
+
+    Bellman-Ford Algorithm: The Bellman-Ford algorithm is also used for finding the shortest paths from a single source vertex to 
+    all other vertices in a weighted graph. It can handle graphs with negative edge weights, 
+    but it also does not consider the requirement of visiting all vertices exactly once, which is essential in the TSP.
+
+The traveling salesperson problem is a combinatorial optimization problem where the objective is to find the shortest possible tour 
+that visits each city exactly once and returns to the starting city. 
+Dijkstra's algorithm and the Bellman-Ford algorithm focus on finding shortest paths from a single source to all other vertices, 
+which is a different problem than finding the shortest tour that visits all vertices exactly once.
+
+However, variations of these algorithms can be used within heuristics or approximation algorithms to solve the TSP. 
+For example, in the context of the TSP, Dijkstra's algorithm can be used as a subroutine within algorithms like the 
+Held-Karp algorithm for solving the TSP with dynamic programming, or within branch-and-bound algorithms for exact solutions 
+with optimization techniques. Similarly, the Bellman-Ford algorithm can be used in some TSP-related algorithms, 
+but not directly to solve the classic TSP problem.

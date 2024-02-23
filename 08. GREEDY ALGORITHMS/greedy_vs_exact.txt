@@ -1,0 +1,17 @@
+    Greedy Algorithm:
+        A greedy algorithm makes locally optimal choices at each step with the hope of finding a global optimum solution.
+        Greedy algorithms typically have polynomial time complexity, often O(n^2) or O(n*log(n)), depending on the problem.
+        Greedy algorithms are efficient and often provide reasonably good solutions, 
+        but they do not guarantee the optimal solution for all instances of the problem.
+
+    Exact Algorithm:
+        An exact algorithm exhaustively searches through all possible solutions to find the optimal solution.
+        The time complexity of an exact algorithm is typically much higher, often factorial (O(n!)) or exponential (O(2^n)), 
+        depending on the problem.
+        Exact algorithms guarantee finding the optimal solution if given enough time and computational resources.
+        However, for large problem instances, the time complexity of exact algorithms becomes impractical, 
+        making them infeasible for solving real-world problems.
+
+In summary, the main difference between a greedy algorithm and an exact algorithm is their approach to finding solutions 
+and their respective time complexities. Greedy algorithms are efficient but may not always produce the optimal solution, 
+while exact algorithms guarantee the optimal solution but are computationally expensive, especially for large problem instances.

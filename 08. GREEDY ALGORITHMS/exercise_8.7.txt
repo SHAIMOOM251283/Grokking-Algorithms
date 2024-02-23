@@ -1,0 +1,12 @@
+Yes, finding the largest clique in a set of people is indeed an NP-complete problem. 
+It falls under the class of problems known as NP-complete because it is at least as hard as the hardest problems in NP 
+and can be transformed into any other NP-complete problem in polynomial time.
+
+In this context, determining whether a clique of a certain size exists in a graph (where people are represented as nodes 
+and relationships as edges) can be done in polynomial time. However, finding the largest clique, which means finding the maximum-size clique, 
+is NP-complete because it requires checking all possible subsets of nodes to determine if they form a clique, 
+which grows exponentially with the size of the graph.
+
+Therefore, like many other combinatorial optimization problems, finding the largest clique is NP-complete.
+
+REFER TO: bron_kerbosch_algorithm.py

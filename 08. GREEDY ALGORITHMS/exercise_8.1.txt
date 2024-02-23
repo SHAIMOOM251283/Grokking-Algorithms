@@ -1,0 +1,22 @@
+A greedy strategy for maximizing the space in each truck when packing boxes for shipping could involve sorting the boxes by size 
+and then packing them into the truck one by one, 
+starting with the largest box that can fit and continuing with the next largest box that fits until there is no space left. 
+
+Here's a step-by-step outline of the greedy strategy:
+
+    Sort the boxes in descending order of size.
+    Initialize an empty truck.
+    Iterate through the sorted list of boxes:
+    a. If the current box fits into the remaining space in the truck, pack it into the truck.
+    b. If the current box does not fit, move to the next box.
+    Continue until all boxes have been considered or there is no space left in the truck.
+
+This strategy prioritizes larger boxes, maximizing the use of available space in each truck. 
+However, it's important to note that this greedy strategy may not always provide the optimal solution. 
+There might be cases where a different combination of smaller boxes could fit more efficiently into the truck, 
+even though individually they are smaller than the larger boxes chosen by the greedy approach.
+
+To determine whether the greedy strategy gives the optimal solution, you would need to compare the result obtained with other approaches, 
+such as dynamic programming or backtracking, which consider all possible combinations of boxes to find the optimal solution. 
+Additionally, the efficiency and practicality of these alternative approaches should also be considered, 
+as they might not be suitable for large numbers of boxes due to their computational complexity.

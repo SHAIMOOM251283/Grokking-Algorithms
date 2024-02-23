@@ -1,0 +1,25 @@
+To maximize the point total during your seven-day stay in Europe, 
+you can use a greedy strategy that prioritizes visiting attractions with the highest point values 
+while ensuring that you have enough time each day to cover the attractions you plan to visit. 
+Here's a possible greedy strategy:
+
+    Sort the attractions by their point values in descending order.
+    Start with an empty schedule for each day of your trip.
+    Iterate through the sorted list of attractions:
+    a. For each attraction, check if there is enough time remaining in any of the days of your trip to visit it.
+    b. If there is enough time, schedule the attraction for that day and deduct the estimated time from the remaining time for that day.
+    c. Continue until all attractions have been considered or there is no time left in any of the days.
+    Repeat this process for each day of your trip.
+
+This greedy strategy prioritizes visiting attractions with higher point values, 
+ensuring that you maximize the total points accumulated during your trip.
+
+However, it's important to note that this greedy strategy may not always provide the optimal solution. 
+There might be cases where a different arrangement of attractions could result in a higher total point value. 
+For example, some attractions might have shorter estimated times but still have high point values, 
+allowing you to fit in more attractions within a day.
+
+To determine whether the greedy strategy gives the optimal solution, you would need to compare the result obtained with other approaches, 
+such as dynamic programming or exhaustive search, which consider all possible combinations of attractions to find the optimal solution. 
+Additionally, practical constraints such as transportation logistics and opening hours of attractions should also be 
+considered in real-world scenarios.

@@ -1,0 +1,16 @@
+Yes, the problem of coloring a map of the USA (or any other map) with the minimum number of colors such that no two adjacent states 
+(or regions) share the same color is a classic example of the graph coloring problem. This problem is indeed NP-complete.
+
+Formally, the problem can be stated as follows: Given a map represented as a graph, where the vertices represent the states 
+(or regions) and the edges represent adjacent states (or regions), find the minimum number of colors needed to color the vertices such that 
+no two adjacent vertices have the same color.
+
+The graph coloring problem is a well-known NP-complete problem, meaning that it is both in NP 
+(i.e., solutions can be verified in polynomial time) and NP-hard (i.e., it is at least as hard as the hardest problems in NP). 
+As such, finding the optimal solution for large instances of this problem is computationally challenging, 
+and it often requires the use of heuristic algorithms or approximation techniques to find a good solution.
+
+Therefore, determining the minimum number of colors needed to color a map of the USA without adjacent states sharing the same color 
+is an NP-complete problem.
+
+REFER TO: sequential_coloring_algorithm.py

@@ -1,0 +1,24 @@
+    Quicksort:
+        Quicksort is not a greedy algorithm.
+        Quicksort is a comparison-based sorting algorithm that works by partitioning an array into two sub-arrays, 
+        then recursively sorting each sub-array.
+        Quicksort does not make locally optimal choices like greedy algorithms; 
+        instead, it uses a divide-and-conquer strategy to efficiently sort the input array.
+
+    Breadth-first search (BFS):
+        Breadth-first search is not a greedy algorithm.
+        BFS is a graph traversal algorithm that explores all the neighbors of a node before moving on to the next level of nodes.
+        BFS systematically explores all possible paths in a graph to find the shortest path from a start node to all other reachable nodes.
+        Unlike greedy algorithms, BFS does not make locally optimal choices; it explores all possible options in a systematic manner.
+
+    Dijkstra's algorithm:
+        Dijkstra's algorithm is not a greedy algorithm.
+        Dijkstra's algorithm is a shortest path algorithm used to find the shortest path from a single source node 
+        to all other nodes in a weighted graph.
+        Dijkstra's algorithm iteratively selects the node with the smallest tentative distance from the source 
+        and updates the distances of its neighbors.
+        Although Dijkstra's algorithm involves making locally optimal choices (selecting the node with the smallest tentative distance), 
+        it does not always select the globally optimal path at each step, so it is not strictly a greedy algorithm.
+
+In summary, none of these algorithms (Quicksort, Breadth-first search, and Dijkstra's algorithm) are classified as greedy algorithms. 
+They each have their own unique strategies for solving specific types of problems.
