@@ -1,0 +1,28 @@
+A—Tree 
+B—Not a tree
+C—Tree
+
+A tree is always a graph, but a graph may or may not be a tree. 
+
+# exercise_6.5.py
+    Tree:
+        In a tree, each node (except the root node) has exactly one parent. 
+        In the provided tree, node 1 is the root, nodes 2 and 3 are its children, and nodes 4 and 5 are children of node 2.
+        There are no cycles in a tree. 
+        A cycle occurs when you can traverse through edges and return to the same node without repeating any edges. 
+        In the provided tree, there are no cycles. You cannot start at any node and return to it without repeating edges.
+        Hence, the tree satisfies the definition of a graph (a collection of nodes connected by edges) 
+        while also adhering to the specific constraints of a tree (no cycles, exactly one parent per node).
+
+    Graph that is not a Tree:
+        The graph provided has the same nodes as the tree, but it has an additional edge between nodes 2 and 3, 
+        creating a cycle (the path 2-1-3-2 forms a cycle).
+        In this graph, node 2 has two neighbors: nodes 1 and 3. 
+        This violates the condition of a tree where each node (except the root) should have exactly one parent.
+        Additionally, the presence of a cycle violates the tree property where there should be no cycles.
+        Therefore, while the graph shares the basic structure of a tree (nodes connected by edges), 
+        it does not satisfy the specific criteria for a tree due to the presence of cycles and nodes with multiple parents.
+
+In simple terms, the tree is a type of graph where each node has a single parent (except the root) and there are no loops or cycles. 
+On the other hand, the provided graph does not meet these conditions, as it contains cycles and nodes with multiple parents, 
+making it not a tree but still a graph.

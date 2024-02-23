@@ -1,0 +1,11 @@
+A valid list of tasks based on the graph:
+
+    Wake up
+    Exercise
+    Shower
+    Brush teeth
+    Get dressed
+    Pack lunch
+    Eat breakfast
+
+This sequence ensures that each task follows the dependencies outlined in the graph.

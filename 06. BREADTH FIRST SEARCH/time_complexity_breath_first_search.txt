@@ -1,0 +1,18 @@
+    Initialization: The search_queue is initialized with the neighbors of the starting node, which in this case is "you". 
+    This initialization takes O(V) time, where V is the number of vertices (or people) in the graph. 
+    This is because in the worst case, you may need to enqueue all the vertices.
+
+    Exploration of Neighbors: In the while loop, each vertex is dequeued from search_queue exactly once. For each dequeued vertex, 
+    its neighbors are enqueued if they haven't been visited yet. Enqueuing each neighbor takes O(1) time. 
+    Since each edge is traversed exactly twice (once for each vertex it connects), traversing all edges takes O(E) time, 
+    where E is the number of edges in the graph.
+
+    Tracking Visited Nodes: The searched list keeps track of the vertices that have been visited to avoid processing them multiple times. 
+    Each vertex is appended to this list at most once. Hence, this step takes O(V) time.
+
+Putting it all together, the time complexity of the breadth-first search algorithm implemented in this code is O(V + E), 
+where V is the number of vertices (people) and E is the number of edges (relationships) in the graph. 
+This complexity arises from visiting each vertex once and each edge twice in the worst case.
+
+In summary, the time complexity of this breadth-first search algorithm is indeed O(V + E), 
+which means it scales linearly with both the number of vertices and the number of edges in the graph.
