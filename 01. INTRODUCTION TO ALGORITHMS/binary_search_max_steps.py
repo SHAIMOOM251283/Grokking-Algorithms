@@ -1,16 +1,22 @@
 import math
 
-def calculate_maximum_steps(list_size):
-    max_steps = math.ceil(math.log2(list_size))
-    return max_steps
+class MaximumSteps:
 
-# Example with a list size of 128
-list_size = int(input("Enter the size of the sorted list: "))
-#list_size = 128
-#list_size = 256 
-max_steps = calculate_maximum_steps(list_size)
+    def __init__(self):
+        self.list_size = int(input("Enter the size of the sorted list: "))
 
-print(f"In a sorted list of {list_size} names, the maximum number of steps for binary search is {max_steps} steps.")
+
+    def calculate_maximum_steps(self):
+        max_steps = math.ceil(math.log2(self.list_size))
+        return max_steps
+
+    def output(self):
+        result = self.calculate_maximum_steps()
+        print(f"In a sorted list of {self.list_size} names, the maximum number of steps for binary search is {result} steps.")
+        
+if __name__ == '__main__':
+    steps = MaximumSteps()
+    steps.output()
 
 
 # Maximum steps=⌈log2​(list size)⌉
