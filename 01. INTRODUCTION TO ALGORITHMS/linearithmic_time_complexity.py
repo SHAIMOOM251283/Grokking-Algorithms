@@ -1,34 +1,40 @@
-# O(n * log n) - Linearithmic Time Complexity
+class LinearithmicTimeComplexity:
 
-def merge_sort(arr):
-    if len(arr) <= 1:
-        return arr
+    def __init__(self):
+        unsorted_list = [5, 2, 9, 1, 5, 6]
+        self.sorted_list = self.merge_sort(unsorted_list)
 
-    mid = len(arr) // 2
-    left = merge_sort(arr[:mid])
-    right = merge_sort(arr[mid:])
+    def merge_sort(self, arr):
+        if len(arr) <= 1:
+            return arr
 
-    return merge(left, right)
+        mid = len(arr) // 2
+        left = self.merge_sort(arr[:mid])
+        right = self.merge_sort(arr[mid:])
 
-def merge(left, right):
-    result = []
-    i = j = 0
+        return self.merge(left, right)
 
-    while i < len(left) and j < len(right):
-        if left[i] < right[j]:
-            result.append(left[i])
-            i += 1
-        else:
-            result.append(right[j])
-            j += 1
+    def merge(self, left, right):
+        result = []
+        i = j = 0
 
-    result.extend(left[i:])
-    result.extend(right[j:])
-    return result
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                result.append(left[i])
+                i += 1
+            else:
+                result.append(right[j])
+                j += 1
 
-# Example usage:
-unsorted_list = [5, 2, 9, 1, 5, 6]
-sorted_list = merge_sort(unsorted_list)
-print("Sorted list:", sorted_list)
+        result.extend(left[i:])
+        result.extend(right[j:])
+        return result
 
-# The merge_sort function has a time complexity of O(n * log n) because it efficiently divides the input array into smaller parts, sorts them individually, and then merges them back together.
+    def run(self):
+        print("Unsorted list:", [5, 2, 9, 1, 5, 6])
+        sorted_list = self.sorted_list
+        print("Sorted list:", sorted_list)
+
+if __name__ == '__main__':
+    ltc = LinearithmicTimeComplexity()
+    ltc.run()

@@ -5,7 +5,6 @@ class MaximumSteps:
     def __init__(self):
         self.list_size = int(input("Enter the size of the sorted list: "))
 
-
     def calculate_maximum_steps(self):
         max_steps = math.ceil(math.log2(self.list_size))
         return max_steps
